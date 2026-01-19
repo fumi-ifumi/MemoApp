@@ -12,7 +12,7 @@ const Index = (): JSX.Element => {
                 <MemoListItem/>
                 <MemoListItem/>
             </View>
-            <CircleButton/>
+            <CircleButton>+</CircleButton>
         </View>
     );
 };
