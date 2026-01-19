@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet, type TextStyle } from "react-native";
+import { JSX } from "react";
 
 interface Props {
     children: string;
@@ -6,7 +7,7 @@ interface Props {
     style?: TextStyle;
 }
 
-const Hello = (props: Props): JSX.component => {
+const Hello = (props: Props): JSX.Element => {
     const {children, bang, style} = props;
     return (
         <View>

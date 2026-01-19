@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet } from "react-native";
+import { JSX } from "react";
 
 const Header = (): JSX.Element => {
     return (
