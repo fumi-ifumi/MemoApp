@@ -2,6 +2,7 @@ import { View, Text, TextInput, StyleSheet } from "react-native";
 import { JSX } from "react";
 
 import Header from "../../components/Header";
+import Button from "../../components/Button";
 
 const SignUp = (): JSX.Element => {
     return (
@@ -11,9 +12,7 @@ const SignUp = (): JSX.Element => {
                 <Text style={styles.title} >Sign Up</Text>
                 <TextInput value="Email address" style={styles.input} />
                 <TextInput value="Password" style={styles.input} />
-                <View style={styles.button} >
-                    <Text style={styles.buttonLabel} >Submit</Text>
-                </View>
+                <Button label="Submit" />
                 <View style={styles.footer}>
                     <Text style={styles.footerText} >Already registerd?</Text>
                     <Text style={styles.footerLink} >Log In.</Text>
