@@ -1,6 +1,6 @@
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 import { Link, router } from "expo-router";
-import { JSX } from "react";
+import { JSX, useState } from "react";
 
 import Button from "../../components/Button";
 
@@ -10,12 +10,31 @@ const handlePress = (): void => {
 };
 
 const LogIn = (): JSX.Element => {
+    const [email, setEmail] = useState("");
+    const [Password, setPassword] = useState("");
+
     return (
         <View style={styles.container} >
             <View style={styles.inner}>
                 <Text style={styles.title} >Log In</Text>
-                <TextInput value="Email address" style={styles.input} />
-                <TextInput value="Password" style={styles.input} />
+                <TextInput
+                    value={email}
+                    onChangeText={(text) => { setEmail(text) }}
+                    placeholder="Email Address"
+                    textContentType="emailAddress"
+                    autoCapitalize="none"
+                    keyboardType="email-address"
+                    style={styles.input}
+                />
+                <TextInput
+                    value={Password}
+                    onChangeText={(text) => { setPassword(text) }}
+                    placeholder="Password"
+                    textContentType="password"
+                    autoCapitalize="none"
+                    secureTextEntry
+                    style={styles.input}
+                />
                 <Button label="Submit" onPress={handlePress} />
                 <View style={styles.footer}>
                     <Text style={styles.footerText} >Not registerd?</Text>
@@ -49,7 +68,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#FFF",
         borderWidth: 1,
         borderColor: "#DDD",
-        color: "#DDD",
+        // color: "#DDD",
         fontSize: 16,
         height: 48,
         padding: 8,
