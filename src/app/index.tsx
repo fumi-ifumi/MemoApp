@@ -1,7 +1,17 @@
-import { Redirect } from "expo-router";
-import { JSX } from "react";
+import { Redirect, router } from "expo-router";
+import { useEffect, JSX } from "react";
+
+import { auth } from "../config";
+import { onAuthStateChanged } from "firebase/auth";
 
 const Index = (): JSX.Element => {
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user !== null) {
+                router.replace("memo/list");
+            }
+        });
+    }, []);
     return <Redirect href="auth/log_in" />
 };
 
