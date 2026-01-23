@@ -52,14 +52,14 @@ const styles = StyleSheet.create({
     },
     inputContainer: {
         flex: 1,
-        paddingVertical: 32,
-        paddingHorizontal: 27
     },
     input: {
         flex: 1,
         fontSize: 16,
         lineHeight: 24,
-        textAlignVertical: "top"
+        textAlignVertical: "top",
+        paddingVertical: 32,
+        paddingHorizontal: 27
     }
 });
 
