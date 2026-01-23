@@ -1,4 +1,4 @@
-import { View, TextInput, StyleSheet } from "react-native";
+import { View, TextInput, Alert, StyleSheet } from "react-native";
 import { router } from "expo-router";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { JSX, useState } from "react";
@@ -16,10 +16,9 @@ const handlePress = (bodyText: string): void => {
         bodyText: bodyText,
         updatedAt: Timestamp.fromDate(new Date())
     }).then((docRef) => {
-        console.log("success", docRef.id);
         router.back();
     }).catch((error) => {
-        console.log(error);
+        Alert.alert("作成に失敗しました");
     });
 }
 
